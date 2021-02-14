@@ -1,9 +1,9 @@
 from discord import Embed
 
 color = 0x505050
-token = 'YOUR_BOT_TOKEN_HERE'
+token = 'YOUR_DISCORD_BOT_TOKEN_HERE'
 
-sign_in_split = '[gb]'
+sign_in_split = '>'
 command_prefix = 'gb.'
 sign_in_instructions_command = command_prefix + 'sign in'
 sign_out_command = command_prefix + 'sign out'
@@ -40,10 +40,10 @@ deleted_gitbot = 'Deleted By GitBot'
 
 sign_in_instructions_message = Embed(
     title='Sign In With GitBot',
-    description=f'To sign in with GitBot, enter your email and password separated with {sign_in_split}.',
+    description=f'To sign in with GitBot, type {sign_in_split} and then your token.',
     color=color
 )
-sign_in_instructions_message.add_field(name='Example', value=f'gitbot@email.com{sign_in_split}example_password', inline=False)
+sign_in_instructions_message.add_field(name='Example', value=f'{sign_in_split}bc20fae37b2923a75836fd206068b7402e7e79f1', inline=False)
 sign_in_instructions_message.add_field(name='Note', value='It is recommended to sign in through a private dm, rather than on a server.', inline=False)
 
 help_message = Embed(
