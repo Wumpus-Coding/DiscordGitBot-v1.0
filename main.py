@@ -24,10 +24,10 @@ async def on_message(message):
             else:
                 await message.channel.send(not_signed_in_message)
 
-        elif message.content.find(sign_in_split) != -1:
-            email, password = message.content.split(sign_in_split)
-            if authentic(email, password):
-                User(message.author, Github(email, password))
+        elif message.content.find(sign_in_split) != -1 and len(message.content) == 41:
+            token = message.content[1:]
+            if authentic(token):
+                User(message.author, Github(token))
                 await message.channel.send(sign_in_success_message)
             else:
                 await message.channel.send(sign_in_failure_message)
