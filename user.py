@@ -9,8 +9,8 @@ from static import *
 users = []
 
 
-def authentic(email, password):
-    github_user = Github(email, password).get_user()
+def authentic(token):
+    github_user = Github(token).get_user()
     try:
         repos = [repo for repo in github_user.get_repos()]
         return True
